@@ -1,0 +1,9 @@
+<h1>Welcome to the App</h1>
+<p>List of Users: </p>
+
+<% @user.each do |u| %>
+<div><a href="/users/<%= u.id%>"><%= u.username %></a></div>
+<div><%= u.email %></div>
+<br>
+<hr>
+<% end %>

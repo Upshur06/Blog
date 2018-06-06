@@ -1,0 +1,12 @@
+<h1>Update User</h1>
+
+
+<%= form_for @user do |f| %>
+First Name: <%= f.text_field :first_name %>
+Last Name: <%= f.text_field :last_name %>
+Username: <%= f.text_field :username %>
+Password: <%= f.text_field :password_digest %>
+Email: <%= f.text_field :email %>
+<%= f.submit "Edit User"%>
+<% end %>
+<%= link_to "Delete User", user_path, method: :delete %>

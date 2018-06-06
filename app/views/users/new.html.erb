@@ -1,0 +1,11 @@
+<h1>Sign Up</h1>
+<p>Complete the following: </p>
+
+<%= form_for @user do |f| %>
+First Name: <%= f.text_field :first_name %>
+Last Name: <%= f.text_field :last_name %>
+Username: <%= f.text_field :username %>
+Password: <%= f.text_field :password %>
+Email: <%= f.text_field :email %>
+<%= f.submit "New User"%>
+<% end %>
