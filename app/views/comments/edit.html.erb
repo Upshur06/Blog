@@ -1,0 +1,10 @@
+<h1 class="editComment">Edit Comment: </h1>
+
+<div class="commentContent">
+<%= form_for @comment do |f| %>
+Content: <%= f.text_area :content %>
+<%= f.submit "Enter"%>
+</div>
+<% end %>
+<br>
+<div class="deleteComment"><%= link_to "Delete Comment", blog_path, method: :delete %></div>

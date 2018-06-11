@@ -1,0 +1,14 @@
+<h1>Blog Page</h1>
+
+<div>
+  <div><a href='/blogs/<%=@blog.id %>/edit'><%= @blog.title %></a></div>
+  <div><%= @blog.content %></div>
+</div>
+
+<h3>Add a comment: </h3>
+
+<%= form_for @comment do |f| %>
+<%= f.text_area :content%>
+<%= hidden_field_tag "blog_id", @blog.id %>
+<%= f.submit "Enter"%>
+<% end %>

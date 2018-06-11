@@ -1,6 +1,22 @@
-<h1>Profile Page</h1>
+<h1 class="profileTitle">Profile Page</h1>
 
-<div>
+<div class="profileUserShow">
   <div><a href='/users/<%=@user.id %>/edit'><%= @user.username %></a></div>
   <div><%= @user.email %></div>
+<br>
+
+<%= link_to "Start A Blog", blogs_new_path %>
+<%= link_to "Blog", blogs_path %>
+</div>
+
+<div class="profilePage">
+<% @user.blogs.each do |b| %>
+<br>
+<hr>
+<div id="UserBlogTitle"><%= b.title %><a href="/blogs/<%=b.id %>/edit"><strong>"Edit Your Blog"</strong></a></div>
+<br>
+<div id="UserBlogContent"><%= b.content %></div>
+<hr>
+
+<% end %>
 </div>

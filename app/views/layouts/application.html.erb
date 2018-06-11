@@ -10,19 +10,26 @@
   </head>
 
   <body>
-    <nav>
 
-    <!-- <% if !logged_in? %> -->
-
-    <!-- <% end %> -->
+    <nav class="navbar">
     <%= link_to "Home", "/" %>
     <%= link_to "Sign Up", new_user_path %>
-    <%= link_to "Sign In", signin_path %>
+    <%= link_to "Log In", signin_path %>
+
+    <% if !logged_in? %>
+    <% end %>
 
     <% if logged_in? %>
-      <%= link_to "New Blog", blogs_new_path %>
     <% end %>
+
+    <%= link_to "Log Out", "/" %>
+    <%= link_to "View Blogs", blogs_path %>
   </nav>
+  <div class=design>
+    <p id="about">Welcome to <strong>Comic-Media</strong> Blog, where we blog about comic book movies and t.v. shows from various cinematic universe.<br>
+      Here users are given the platform to discuss in forms about characters, narratives, stroyline, blockbuster film deals, etc.
+    </p>
+  </div>
 
     <%= yield %>
     <p class="notice"><%= notice %></p>
