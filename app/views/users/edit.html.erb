@@ -1,12 +1,13 @@
-<h1>Update User</h1>
+<h1 class="updateUser">Update User</h1>
 
-
+<div class="userUpdate">
 <%= form_for @user do |f| %>
-First Name: <%= f.text_field :first_name %>
-Last Name: <%= f.text_field :last_name %>
-Username: <%= f.text_field :username %>
-Password: <%= f.text_field :password_digest %>
-Email: <%= f.text_field :email %>
-<%= f.submit "Edit User"%>
+<div class="b">First Name: <%= f.text_field :first_name %></div>
+<div class="b">Last Name: <%= f.text_field :last_name %></div>
+<div class="b">Username: <%= f.text_field :username %></div>
+<div class="b">Password: <%= f.text_field :password_digest %></div>
+<div class="b">Email: <%= f.text_field :email %></div>
+<div class="b"><%= f.submit "Edit User"%></div>
+</div>
 <% end %>
-<%= link_to "Delete User", user_path, method: :delete %>
+<div class="deletUser"><%= link_to "Delete User", user_path, method: :delete %></div>

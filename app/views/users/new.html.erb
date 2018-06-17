@@ -1,11 +1,13 @@
-<h1>Sign Up</h1>
-<p>Complete the following: </p>
+<h1 class="userSignUp">Sign Up</h1>
 
+
+<div class="userSignIn">
 <%= form_for @user do |f| %>
-First Name: <%= f.text_field :first_name %>
-Last Name: <%= f.text_field :last_name %>
-Username: <%= f.text_field :username %>
-Password: <%= f.text_field :password %>
-Email: <%= f.text_field :email %>
-<%= f.submit "New User"%>
+<div class="a">First Name: <%= f.text_field :first_name %></div>
+<div class="a">Last Name: <%= f.text_field :last_name %></div>
+<div class="a">Username: <%= f.text_field :username %></div>
+<div class="a">Password: <%= f.text_field :password %></div>
+<div class="a">Email: <%= f.text_field :email %></div>
+<div class="a"><%= f.submit "New User"%></div>
 <% end %>
+</div>

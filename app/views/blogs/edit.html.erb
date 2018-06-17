@@ -1,0 +1,11 @@
+<h1 class="editBlogTitle">Edit Blog: </h1>
+
+<div class="blogEditPage">
+<%= form_for @blog do |f| %>
+Title: <%= f.text_field :title %>
+Content: <%= f.text_field :content %>
+<%= f.submit "Edit Blog"%>
+</div>
+<% end %>
+<br>
+<div class="deleteBlogBtn"><%= link_to "Delete Blog", blog_path, method: :delete %></div>

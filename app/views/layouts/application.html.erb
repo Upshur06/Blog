@@ -10,20 +10,39 @@
   </head>
 
   <body>
-    <nav>
 
-    <!-- <% if !logged_in? %> -->
-
-    <!-- <% end %> -->
+    <nav class="navbar">
     <%= link_to "Home", "/" %>
-    <%= link_to "Sign Up", new_user_path %>
-    <%= link_to "Sign In", signin_path %>
 
-    <% if logged_in? %>
-      <%= link_to "New Blog", blogs_new_path %>
-    <% end %>
+      <% if !logged_in? %>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Log In", signin_path %>
+    <%= link_to "View Blogs", blogs_path %>
+
+      <% else %>
+
+    <%= link_to "Log Out", logout_path, :method => "sessions#destroy" %>
+    <li class="currentUser">Greetings <%= @user.username %></li>
+      <% end %>
+
   </nav>
 
+  <div class=design>
+    <p id="about">Welcome to <strong>Comic-Media</strong> Blog, where we blog about comic book movies and t.v. shows from various cinematic universe.<br>
+      Here users are given the platform to discuss in forms about characters, narratives, stroyline, blockbuster film deals, etc.
+      This is where a group of comics, movie, and science fiction fans -- such as yourself -- can banded together and connect on a deeper level.<br>
+      Comic-Media is inspired to become one of the focal point for the world of comic book entertainment, and other aspect aren't off topic, such as conventions, featuring comics and all aspects of the popular arts, any workshops and educational and academic programming such as the Comics Arts Conference; anime and film screenings (including a separate film festival); video games”; anything and everything surrounding the comics industry; we want to read your thoughts.
+    </p>
+  </div>
+
+  <button id=""></button>
+  <div class="usersNotice">
+  <% if !flash[:notice].blank? %>
+  <div>
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+  </div>
     <%= yield %>
     <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>

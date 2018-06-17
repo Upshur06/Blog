@@ -1,7 +1,23 @@
-<h1>List of Blogs</h1>
+<h1 class="multipleBlogs">List of Blogs</h1>
 
-<% @blogs.each do |b| %>
-  <%= b.title %>
-  <%= b.content %>
+<div class="blogPostList">
+  <% @blogs.each do |b| %>
+    <div class="blogTitle"><%= b.title %></div>
+    <br>
+    <div class="blogContent"><%= b.content %></div>
+    <div class="blogUser"><%= b.user.username %></div>
 
-<% end %>
+      <a href="/blogs/<%= b.id %>">Make a comment</a>
+
+      <br>
+      <br>
+      <% b.comments.each do |c| %>
+      <a href="/comments/<%= c.id %>/edit">Edit comment</a>
+      <div class="commentSection"><%= c.content %></div>
+      <br>
+
+      <% end %>
+
+      <hr>
+      <% end %>
+</div>

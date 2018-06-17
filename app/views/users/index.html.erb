@@ -1,9 +1,15 @@
-<h1>Welcome to the App</h1>
-<p>List of Users: </p>
 
-<% @user.each do |u| %>
-<div><a href="/users/<%= u.id%>"><%= u.username %></a></div>
-<div><%= u.email %></div>
-<br>
-<hr>
+<h1 class="welcome">This is <strong class="comic">Comic-Media</strong> Blog</h1>
+<p class="users">List of Users: </p>
+
+<% @users.each do |u| %>
+<div class="userList">
+  <div id="userName"><a href="/signin"><%= u.username %></a></div>
+  <div id="userEmail"><%= u.email %></div>
+  <br>
+  <hr>
+</div>
 <% end %>
+
+
+<button id="btn" onclick="introduction()">Click Me</button>

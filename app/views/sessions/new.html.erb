@@ -1,7 +1,9 @@
-<h1>Sign In</h1>
+<h1 class="sign">Sign In</h1>
 
 <%= form_tag(signin_path) do %>
+<div class="signIn">
 Username: <%= text_field_tag :username %>
 Password: <%= text_field_tag :password %>
 <%= submit_tag "Sign In" %>
+</div>
 <% end %>
