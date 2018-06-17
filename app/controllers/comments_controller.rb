@@ -12,12 +12,13 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @blog = Blog.find(params[:blog_id])
     @comment = Comment.find(params[:id])
-    if @comment.update(com_params)
+    @blog = @comment.blog
+    if @comment.update(comment_params)
       redirect_to "/blogs"
     else
       render edit_blog_path
@@ -25,9 +26,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @blog = Blog.find(params[:blog_id])
-    @comment = @blog.comments.destroy(params[:id])
-    @comment.destroy 
+    # @blog = Blog.find(params[:blog_id])
+    # @comment = @blog.comments.destroy(params[:id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
     redirect_to "/blogs"
   end
 

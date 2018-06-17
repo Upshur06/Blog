@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
+    @user = current_user
+
   end
 
   def new
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
 
 def signin
     @user = User.find_by_username(params[:username])
-    if current_user && current_user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to "/users/#{session[:user_id]}"
       flash[:notice] = "succesfully signed in"
@@ -27,7 +29,6 @@ def signin
       flash[:notice] = "try again"
     end
 end
-
 
   def show
     @user = User.find(params[:id])
@@ -40,7 +41,7 @@ end
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      refirect_to "/users"
+      redirect_to "/users"
     else
       render edit_user_path
     end

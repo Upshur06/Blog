@@ -88,3 +88,30 @@
 .deletUser{
   margin-left: 710px;
 }
+
+.usersNotice{
+  position: relative;
+  left: 700px;
+  top: 550px;
+}
+
+.currentUser{
+  width: 330px;
+  border: 4px double blue;
+  display: inline;
+  position: relative;
+  left: 713px;
+  bottom: 3px;
+  font-size: 22px;
+}
+
+
+.notice{
+  color: green;
+}
+
+#btn{
+  position: relative;
+  left: 720px;
+  bottom: 835px;
+}

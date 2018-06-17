@@ -14,7 +14,7 @@ post "/logout" =>  "sessions#destroy"
 root "users#index"
 
   resources :users
-  resources :blogs
+  resources :blogs 
   resources :comments
 
 end

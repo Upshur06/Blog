@@ -10,9 +10,9 @@
       <a href="/blogs/<%= b.id %>">Make a comment</a>
 
       <br>
-      <a href="/comments/<%= b.id %>/edit">Edit comment</a>
       <br>
       <% b.comments.each do |c| %>
+      <a href="/comments/<%= c.id %>/edit">Edit comment</a>
       <div class="commentSection"><%= c.content %></div>
       <br>
 

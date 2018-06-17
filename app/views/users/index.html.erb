@@ -1,7 +1,8 @@
+
 <h1 class="welcome">This is <strong class="comic">Comic-Media</strong> Blog</h1>
 <p class="users">List of Users: </p>
 
-<% @user.each do |u| %>
+<% @users.each do |u| %>
 <div class="userList">
   <div id="userName"><a href="/signin"><%= u.username %></a></div>
   <div id="userEmail"><%= u.email %></div>
@@ -9,3 +10,6 @@
   <hr>
 </div>
 <% end %>
+
+
+<button id="btn" onclick="introduction()">Click Me</button>

@@ -2,10 +2,12 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    @user = current_user
   end
 
   def new
     @blog = Blog.new
+    @user = current_user
   end
 
   def create
@@ -20,11 +22,13 @@ end
 
 def show
   @blog = Blog.find(params[:id])
+  @user = current_user
   @comment = Comment.new
 end
 
 def edit
   @blog = Blog.find(params[:id])
+  @user = current_user
 end
 
 def update
