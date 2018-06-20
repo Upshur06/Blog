@@ -1,7 +1,9 @@
 <h1 class="blogPageTitle">Blog Page</h1>
 
 <div class="blogShow">
+  <% if @blog.user_id === current_user.id %>
   <div class="linkTitle"><%= @blog.title %><%= link_to "Edit Blog", edit_blog_path %></div>
+  <% end %>
   <div class="linkContent"><%= @blog.content %></div>
 </div>
 
