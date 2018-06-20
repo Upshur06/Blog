@@ -5,7 +5,3 @@ function introduction(){
     alert("Welcome " + question + "! Hope you enjoy this BLog");
   }
 }
-
-// introduction()
-//
-//

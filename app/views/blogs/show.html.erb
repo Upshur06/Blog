@@ -1,7 +1,7 @@
 <h1 class="blogPageTitle">Blog Page</h1>
 
 <div class="blogShow">
-  <div class="linkTitle"><a href='/blogs/<%=@blog.id %>/edit'><%= @blog.title %></a></div>
+  <div class="linkTitle"><%= @blog.title %><%= link_to "Edit Blog", edit_blog_path %></div>
   <div class="linkContent"><%= @blog.content %></div>
 </div>
 
