@@ -12,7 +12,9 @@
       <br>
       <br>
       <% b.comments.each do |c| %>
+      <% if c.user_id === current_user.id %>
       <a href="/comments/<%= c.id %>/edit">Edit comment</a>
+      <% end %>
       <div class="commentSection"><%= c.content %></div>
       <br>
 

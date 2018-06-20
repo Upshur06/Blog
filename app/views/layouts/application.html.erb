@@ -12,17 +12,21 @@
   <body>
 
     <nav class="navbar">
+
     <%= link_to "Home", "/" %>
 
       <% if !logged_in? %>
     <%= link_to "Sign Up", new_user_path %>
     <%= link_to "Log In", signin_path %>
-    <%= link_to "View Blogs", blogs_path %>
+
 
       <% else %>
 
     <%= link_to "Log Out", logout_path, :method => "sessions#destroy" %>
-    <li class="currentUser">Greetings <%= @user.username %></li>
+    <%= link_to "View Blogs", blogs_path %>
+    <%= link_to "Post Blog", new_blog_path %>
+    
+    <li class="currentUser"> <%= @user.username %></li>
       <% end %>
 
   </nav>
@@ -34,6 +38,7 @@
       Comic-Media is inspired to become one of the focal point for the world of comic book entertainment, and other aspect aren't off topic, such as conventions, featuring comics and all aspects of the popular arts, any workshops and educational and academic programming such as the Comics Arts Conference; anime and film screenings (including a separate film festival); video games”; anything and everything surrounding the comics industry; we want to read your thoughts.
     </p>
   </div>
+
 
   <button id=""></button>
   <div class="usersNotice">
